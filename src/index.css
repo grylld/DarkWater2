@@ -30,11 +30,12 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
-  @apply bg-dark-900 text-white font-sans antialiased overflow-x-hidden;
+  @apply bg-dark-900 text-white font-sans antialiased;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   touch-action: pan-y;
 }
