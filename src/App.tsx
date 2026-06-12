@@ -9,6 +9,8 @@ import { CreditorsSupportSection, Ticker } from './components/CreditorsSupportSe
 import { ContactFooter } from './components/ContactFooter';
 import { initScrollAnimations, cleanupScrollAnimations } from './animations/scrollAnimations';
 
+import { WhatsAppWidget } from './components/WhatsAppWidget';
+
 export default function App() {
   useEffect(() => {
     // Small delay so all DOM is fully painted before GSAP queries
@@ -34,6 +36,7 @@ export default function App() {
         <Ticker />
       </main>
       <ContactFooter />
+      <WhatsAppWidget />
     </div>
   );
 }
