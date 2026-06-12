@@ -117,7 +117,7 @@ export default function AboutUsSection() {
   ]
 
   const stats = [
-    { icon: <Award />, value: 15, label: "Years Experience", suffix: "+" },
+    { icon: <Award />, value: 20, label: "Years Experience", suffix: "+" },
     { icon: <Users />, value: 500, label: "Creditors Supported", suffix: "+" },
     { icon: <Calendar />, value: 24, label: "Hour Response", suffix: "" },
     { icon: <TrendingUp />, value: 95, label: "Recovery Rate", suffix: "%" },
