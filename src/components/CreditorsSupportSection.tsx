@@ -63,7 +63,7 @@ export function CreditorsSupportSection() {
 
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 snap-x hide-scrollbar"
+        className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 scroll-pl-4 sm:scroll-pl-0"
         data-scroll-touch
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
       >
@@ -104,9 +104,11 @@ export function CreditorsSupportSection() {
             </p>
           </div>
         ))}
+        {/* Trailing spacer so last card isn't clipped on mobile */}
+        <div className="shrink-0 w-4 sm:hidden" aria-hidden="true" />
       </div>
 
-      <div className="flex items-center justify-center gap-4 mt-8">
+      <div className="hidden sm:flex items-center justify-center gap-4 mt-8">
         <button onClick={() => scroll('left')} className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-dark-900 transition-colors cursor-pointer" aria-label="Scroll left">
           <ArrowLeft className="w-4 h-4" />
         </button>
