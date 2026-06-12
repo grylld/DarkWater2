@@ -110,8 +110,8 @@ export function ContactFooter() {
       </div>
 
       <footer className="bg-lime-500 text-dark-900 pt-12 sm:pt-16 pb-8 px-4 sm:px-6 lg:px-8 rounded-t-[2rem] sm:rounded-t-[4rem]">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
-          <div className="col-span-2 md:col-span-1">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 sm:mb-16">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <img
                 src={darkwaterLogo}
@@ -146,7 +146,7 @@ export function ContactFooter() {
             </ul>
           </div>
 
-          <div className="col-span-2 md:col-span-1">
+          <div>
             <h4 className="font-bold mb-6 tracking-wide">HOURS</h4>
             <div className="flex items-start gap-3 text-sm text-dark-900/80">
               <Clock3 className="mt-1 h-4 w-4 shrink-0 text-dark-900" />

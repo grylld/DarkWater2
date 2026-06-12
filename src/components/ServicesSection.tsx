@@ -138,7 +138,7 @@ export function ServicesSection() {
                   className="group bg-dark-900/50 backdrop-blur-sm p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-lime-500/50 hover:bg-white/5 transition-all duration-300 flex flex-col gap-3 sm:gap-4"
                 >
                   {/* Number + title row */}
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-start sm:justify-between gap-3 sm:gap-4">
                     <span className="font-mono text-xs text-white/20 pt-1 shrink-0">
                       {service.num}
                     </span>
