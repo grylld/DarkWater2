@@ -29,12 +29,30 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 body {
   @apply bg-dark-900 text-white font-sans antialiased overflow-x-hidden;
+  -webkit-text-size-adjust: 100%;
+  touch-action: pan-y;
 }
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-display tracking-tight;
+}
+
+/* Hide scrollbar cross-browser */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure touch scroll on iOS for horizontal scroll containers */
+[data-scroll-touch] {
+  -webkit-overflow-scrolling: touch;
 }

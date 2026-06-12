@@ -14,7 +14,16 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const next = !isMenuOpen;
+    setIsMenuOpen(next);
+    // Prevent background scroll when menu is open
+    document.body.style.overflow = next ? 'hidden' : '';
+  };
+
+  // Cleanup on unmount
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = '';
   };
 
   return (
@@ -33,7 +42,7 @@ export function Navigation() {
           {/* Mobile menu toggle button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden absolute right-0 z-50 p-2"
+            className="md:hidden absolute right-0 z-50 p-3 -mr-1"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <div
@@ -68,7 +77,7 @@ export function Navigation() {
                   <a
                     href={link.href}
                     className="relative inline-block group"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => closeMenu()}
                   >
                     {/* Link text */}
                     <span

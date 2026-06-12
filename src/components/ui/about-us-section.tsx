@@ -127,7 +127,7 @@ export default function AboutUsSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="w-full py-24 px-4 bg-dark-900 text-white overflow-hidden relative scroll-mt-28"
+      className="w-full py-16 sm:py-24 px-4 bg-dark-900 text-white overflow-hidden relative scroll-mt-28"
     >
       {/* Decorative background elements */}
       <motion.div
@@ -180,7 +180,7 @@ export default function AboutUsSection() {
             <Zap className="w-4 h-4" />
             Discover Dark Water
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6 text-center">About Us</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold mb-4 sm:mb-6 text-center">About Us</h2>
           <motion.div
             className="w-24 h-1 bg-lime-500 rounded-full"
             initial={{ width: 0 }}
@@ -189,15 +189,15 @@ export default function AboutUsSection() {
           ></motion.div>
         </motion.div>
 
-        <motion.p className="text-center max-w-3xl mx-auto mb-20 text-gray-400 leading-relaxed" variants={itemVariants}>
+        <motion.p className="text-center max-w-3xl mx-auto mb-12 sm:mb-20 text-gray-400 leading-relaxed text-sm sm:text-base" variants={itemVariants}>
           Dark Water is a KZN-based investigative debt recovery and creditors support company operating across South Africa. 
           Debt collection isn't just about making calls—it's about understanding why the debt exists and finding the 
           pressure point to resolve it through 100% compliant and transparent strategies.
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 relative">
           {/* Left Column */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {services
               .filter((service) => service.position === "left")
               .map((service, index) => (
@@ -215,7 +215,7 @@ export default function AboutUsSection() {
           </div>
 
           {/* Center Image */}
-          <div className="flex justify-center items-center order-first lg:order-none mb-12 lg:mb-0">
+          <div className="flex justify-center items-center order-first lg:order-none mb-8 lg:mb-0">
             <motion.div className="relative w-full max-w-sm" variants={itemVariants}>
               <motion.div
                 className="rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
@@ -259,7 +259,7 @@ export default function AboutUsSection() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {services
               .filter((service) => service.position === "right")
               .map((service, index) => (
@@ -280,7 +280,7 @@ export default function AboutUsSection() {
         {/* Stats Section */}
         <motion.div
           ref={statsRef}
-          className="mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="mt-16 sm:mt-28 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           initial="hidden"
           animate={isStatsInView ? "visible" : "hidden"}
           variants={containerVariants}
@@ -299,15 +299,15 @@ export default function AboutUsSection() {
 
         {/* CTA Section */}
         <motion.div
-          className="mt-24 bg-dark-800 border border-white/10 p-10 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden"
+          className="mt-16 sm:mt-24 bg-dark-800 border border-white/10 p-6 sm:p-10 rounded-[2rem] flex flex-col items-start sm:items-center sm:flex-row justify-between gap-6 sm:gap-8 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
           <div className="flex-1 relative z-10">
-            <h3 className="text-3xl font-display font-semibold mb-3">Ready to recover what's yours?</h3>
-            <p className="text-gray-400">Let's create a customized recovery plan for your business.</p>
+            <h3 className="text-2xl sm:text-3xl font-display font-semibold mb-2 sm:mb-3">Ready to recover what's yours?</h3>
+            <p className="text-gray-400 text-sm sm:text-base">Let's create a customized recovery plan for your business.</p>
           </div>
           <motion.a
             href="#contact"
@@ -414,7 +414,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
 
   return (
     <motion.div
-      className="bg-dark-800 border border-white/5 p-8 rounded-[2rem] flex flex-col items-center text-center group hover:border-white/10 hover:bg-dark-800/80 transition-all duration-300"
+      className="bg-dark-800 border border-white/5 p-5 sm:p-8 rounded-[2rem] flex flex-col items-center text-center group hover:border-white/10 hover:bg-dark-800/80 transition-all duration-300"
       variants={{
         hidden: { opacity: 0, y: 20 },
         visible: {
@@ -426,12 +426,12 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <motion.div
-        className="w-16 h-16 rounded-2xl bg-dark-900 border border-white/10 flex items-center justify-center mb-6 text-lime-500 group-hover:bg-lime-500/10 group-hover:border-lime-500/20 transition-colors duration-300"
+        className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-dark-900 border border-white/10 flex items-center justify-center mb-4 sm:mb-6 text-lime-500 group-hover:bg-lime-500/10 group-hover:border-lime-500/20 transition-colors duration-300"
         whileHover={{ rotate: 360, transition: { duration: 0.8 } }}
       >
         {icon}
       </motion.div>
-      <motion.div ref={countRef} className="text-4xl font-display font-bold text-white flex items-center mb-2">
+      <motion.div ref={countRef} className="text-3xl sm:text-4xl font-display font-bold text-white flex items-center mb-1 sm:mb-2">
         <motion.span>{displayValue}</motion.span>
         <span>{suffix}</span>
       </motion.div>

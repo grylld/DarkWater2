@@ -61,7 +61,7 @@ export function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      className="scroll-mt-28 py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      className="scroll-mt-28 py-16 sm:py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
     >
       {/* Floating parallax orbs */}
       <motion.div
@@ -81,7 +81,7 @@ export function ServicesSection() {
       </div>
 
       {/* Main container */}
-      <div className="bg-dark-800 rounded-[3rem] p-8 md:p-12 lg:p-16 relative overflow-visible">
+        <div className="bg-dark-800 rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 md:p-12 lg:p-16 relative overflow-visible">
 
         {/* Two-column layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
@@ -95,13 +95,13 @@ export function ServicesSection() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold mb-4 sm:mb-6">
                 Our{' '}
                 <span className="bg-lime-500 text-dark-900 px-3 py-1 rounded-lg">
                   Services
                 </span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-10">
+              <p className="text-gray-400 text-base leading-relaxed mb-6 sm:mb-10">
                 Dark Water supports creditors through recovery, dispute
                 resolution, investigation, tracing, testing, and secure
                 executive services.
@@ -123,7 +123,7 @@ export function ServicesSection() {
 
           {/* ── Right: Card grid ── */}
           <div className="lg:w-2/3">
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {services.map((service, idx) => (
                 <motion.div
                   key={service.num}
@@ -135,7 +135,7 @@ export function ServicesSection() {
                     delay: (idx % 2) * 0.15,
                   }}
                   viewport={{ once: true, amount: 0.2 }}
-                  className="group bg-dark-900/50 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:border-lime-500/50 hover:bg-white/5 transition-all duration-300 flex flex-col gap-4"
+                  className="group bg-dark-900/50 backdrop-blur-sm p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-lime-500/50 hover:bg-white/5 transition-all duration-300 flex flex-col gap-3 sm:gap-4"
                 >
                   {/* Number + title row */}
                   <div className="flex items-start justify-between gap-4">
@@ -159,13 +159,13 @@ export function ServicesSection() {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
               viewport={{ once: true, amount: 0.3 }}
-              className="mt-8 bg-lime-500 rounded-3xl p-8 md:p-12 text-dark-900 flex flex-col md:flex-row items-center justify-between gap-8"
+              className="mt-6 sm:mt-8 bg-lime-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-dark-900 flex flex-col items-start gap-5 sm:gap-8"
             >
               <div>
-                <h3 className="font-display font-bold text-3xl mb-2 leading-tight">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl mb-1 sm:mb-2 leading-tight">
                   Ready to recover what's yours?
                 </h3>
-                <p className="text-dark-900/70 font-medium">
+                <p className="text-dark-900/70 font-medium text-sm sm:text-base">
                   Let's build a transparent recovery plan for your business today.
                 </p>
               </div>

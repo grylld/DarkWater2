@@ -30,11 +30,11 @@ const hours = [
 
 export function ContactFooter() {
   return (
-    <div id="contact" className="scroll-mt-28 pt-24 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-        <div className="bg-dark-800 rounded-[3rem] p-8 md:p-12 lg:p-16 border border-white/5 relative overflow-hidden grid lg:grid-cols-[minmax(0,1fr)_420px] gap-12">
+    <div id="contact" className="scroll-mt-28 pt-16 sm:pt-24 mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-24">
+        <div className="bg-dark-800 rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 border border-white/5 relative overflow-hidden grid lg:grid-cols-[minmax(0,1fr)_420px] gap-8 sm:gap-12">
           <div className="z-10">
-            <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold mb-4 sm:mb-6">
               Drop us a line.
             </h2>
             <p className="text-gray-400 mb-8 max-w-xl text-sm leading-relaxed">
@@ -114,9 +114,9 @@ export function ContactFooter() {
         </div>
       </div>
 
-      <footer className="bg-lime-500 text-dark-900 pt-16 pb-8 px-4 sm:px-6 lg:px-8 rounded-t-[3rem] sm:rounded-t-[4rem]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-          <div>
+      <footer className="bg-lime-500 text-dark-900 pt-12 sm:pt-16 pb-8 px-4 sm:px-6 lg:px-8 rounded-t-[2rem] sm:rounded-t-[4rem]">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
+          <div className="col-span-2 md:col-span-1">
             <div className="mb-6">
               <img
                 src={darkwaterLogo}
@@ -142,16 +142,16 @@ export function ContactFooter() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 tracking-wide">CONTACT</h4>
+            <h4 className="font-bold mb-4 sm:mb-6 tracking-wide">CONTACT</h4>
             <ul className="space-y-3 text-sm text-dark-900/80">
               <li><a href="tel:+27782517123" className="hover:text-dark-900 font-medium">078 251 7123</a></li>
-              <li><a href="mailto:darkwaterco@outlook.com" className="hover:text-dark-900 font-medium">darkwaterco@outlook.com</a></li>
+              <li><a href="mailto:darkwaterco@outlook.com" className="hover:text-dark-900 font-medium break-all">darkwaterco@outlook.com</a></li>
               <li>24 Barron Road, Albany, Hillcrest</li>
               <li><a href="https://wa.me/27782517123" className="hover:text-dark-900 font-medium">WhatsApp Dark Water</a></li>
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h4 className="font-bold mb-6 tracking-wide">HOURS</h4>
             <div className="flex items-start gap-3 text-sm text-dark-900/80">
               <Clock3 className="mt-1 h-4 w-4 shrink-0 text-dark-900" />

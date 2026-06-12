@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { ArrowLeft, ArrowRight, Calculator, FileText, Headphones, ShieldCheck } from 'lucide-react';
 
 const supportCards = [
@@ -45,13 +45,13 @@ export function CreditorsSupportSection() {
   };
 
   return (
-    <section id="support" className="scroll-mt-28 py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="support" className="scroll-mt-28 py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mb-12 max-w-3xl">
         <div className="mb-5 inline-flex items-center gap-3 border border-white/10 bg-dark-800 px-4 py-2 text-xs font-semibold uppercase text-gray-300">
           <ShieldCheck className="h-4 w-4 text-lime-500" />
           Creditors Support Desk
         </div>
-        <h2 className="text-4xl md:text-5xl font-display font-semibold">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold">
           Bookkeeping and recovery calls from one desk.
         </h2>
         <p className="mt-5 text-sm leading-7 text-gray-400">
@@ -61,9 +61,14 @@ export function CreditorsSupportSection() {
         </p>
       </div>
 
-      <div ref={scrollContainerRef} className="flex gap-6 overflow-x-auto pb-8 snap-x hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      <div
+        ref={scrollContainerRef}
+        className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 snap-x hide-scrollbar"
+        data-scroll-touch
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+      >
         {supportCards.map(({ icon: Icon, title, label, copy, footer, downloads }) => (
-          <div key={title} className="min-w-[300px] md:min-w-[400px] max-w-[500px] bg-dark-800 p-8 md:p-10 rounded-[2rem] border border-white/5 shrink-0 snap-center">
+          <div key={title} className="min-w-[calc(100vw-2rem)] sm:min-w-[300px] md:min-w-[400px] max-w-[500px] bg-dark-800 p-6 sm:p-8 md:p-10 rounded-[2rem] border border-white/5 shrink-0 snap-center">
             <div className="flex items-center justify-between gap-5 mb-8">
               <div className="flex items-center gap-4">
                 <div className="flex w-12 h-12 items-center justify-center rounded-xl bg-lime-500 text-dark-900">

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { CardStack, CardStackItem } from './ui/card-stack';
 import noWinNoFeeImg from '../assets/images/no_win_no_fee.png';
 import legalPrecisionImg from '../assets/images/legal_precision.jpg';
@@ -41,16 +42,42 @@ const guaranteeItems: CardStackItem[] = [
   },
 ];
 
+function useResponsiveCardWidth() {
+  const [cardWidth, setCardWidth] = useState(() => {
+    if (typeof window === 'undefined') return 480;
+    const vw = window.innerWidth;
+    if (vw < 480) return Math.max(260, vw - 48);
+    if (vw < 768) return Math.min(420, vw - 48);
+    return 540;
+  });
+
+  useEffect(() => {
+    function onResize() {
+      const vw = window.innerWidth;
+      if (vw < 480) setCardWidth(Math.max(260, vw - 48));
+      else if (vw < 768) setCardWidth(Math.min(420, vw - 48));
+      else setCardWidth(540);
+    }
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  return cardWidth;
+}
+
 export function GuaranteeSection() {
+  const cardWidth = useResponsiveCardWidth();
+  const cardHeight = cardWidth < 380 ? 280 : 340;
+
   return (
-    <section id="guarantee" className="scroll-mt-28 py-24 w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <section id="guarantee" className="scroll-mt-28 py-16 sm:py-24 w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
           <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-display font-semibold">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold">
               Our <span className="bg-lime-500 text-dark-900 px-3 py-1 rounded-lg">Guarantee</span>
             </h2>
-            <p className="mt-5 text-sm leading-7 text-gray-400">
+            <p className="mt-4 sm:mt-5 text-sm leading-7 text-gray-400">
               Dark Water stands behind its work with a no-risk recovery approach,
               proven strategies, and a commitment to helping businesses reclaim
               what they are owed.
@@ -62,7 +89,7 @@ export function GuaranteeSection() {
         </div>
       </div>
 
-      <div className="w-full relative py-12">
+      <div className="w-full relative py-8 sm:py-12">
         <CardStack
           items={guaranteeItems}
           initialIndex={0}
@@ -70,8 +97,8 @@ export function GuaranteeSection() {
           intervalMs={3000}
           pauseOnHover={true}
           showDots={true}
-          cardWidth={540}
-          cardHeight={340}
+          cardWidth={cardWidth}
+          cardHeight={cardHeight}
           overlap={0.55}
           activeLiftPx={20}
           activeScale={1.05}
