@@ -110,8 +110,8 @@ export function ContactFooter() {
       </div>
 
       <footer className="bg-lime-500 text-dark-900 pt-12 sm:pt-16 pb-8 px-4 sm:px-6 lg:px-8 rounded-t-[2rem] sm:rounded-t-[4rem]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 sm:mb-16">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
+          <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <img
                 src={darkwaterLogo}
@@ -125,7 +125,7 @@ export function ContactFooter() {
             </p>
           </div>
           
-          <div>
+          <div className="hidden md:block">
             <h4 className="font-bold mb-6 tracking-wide">SECTIONS</h4>
             <ul className="space-y-3 text-sm text-dark-900/80">
               {companyLinks.map((link) => (
@@ -136,19 +136,19 @@ export function ContactFooter() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-4 sm:mb-6 tracking-wide">CONTACT</h4>
+          <div className="col-span-1 md:col-span-1">
+            <h4 className="font-bold mb-4 sm:mb-6 tracking-wide text-center sm:text-left">CONTACT</h4>
             <ul className="space-y-3 text-sm text-dark-900/80">
               <li><a href="tel:+27782517123" className="hover:text-dark-900 font-medium">078 251 7123</a></li>
               <li><a href="mailto:darkwaterco@outlook.com" className="hover:text-dark-900 font-medium break-all">darkwaterco@outlook.com</a></li>
               <li>24 Barron Road, Albany, Hillcrest</li>
-              <li><a href="https://wa.me/27782517123" className="hover:text-dark-900 font-medium">WhatsApp Dark Water</a></li>
+              <li><a href="https://wa.me/27782517123" className="hover:text-dark-900 font-medium">WhatsApp</a></li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-6 tracking-wide">HOURS</h4>
-            <div className="flex items-start gap-3 text-sm text-dark-900/80">
+          <div className="col-span-1 md:col-span-1">
+            <h4 className="font-bold mb-4 sm:mb-6 tracking-wide text-center sm:text-left">HOURS</h4>
+            <div className="flex items-start justify-center sm:justify-start gap-3 text-sm text-dark-900/80">
               <Clock3 className="mt-1 h-4 w-4 shrink-0 text-dark-900" />
               <ul className="space-y-2">
                 {hours.map((hour) => (

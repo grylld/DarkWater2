@@ -188,6 +188,29 @@ export function CardStack<T extends CardStackItem>({
 
   if (!len) return null;
 
+  const touchStartX = React.useRef(0);
+  const touchEndX = React.useRef(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 50) next(); // swipe left
+    else if (distance < -50) prev(); // swipe right
+    
+    // reset
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
+
   const activeItem = items[active]!;
 
   return (
@@ -202,6 +225,9 @@ export function CardStack<T extends CardStackItem>({
         style={{ height: Math.max(380, cardHeight + 80), touchAction: 'pan-y' }}
         tabIndex={0}
         onKeyDown={onKeyDown}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {/* background wash / spotlight (unique feel) */}
         <div
