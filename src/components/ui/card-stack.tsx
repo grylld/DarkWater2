@@ -199,7 +199,7 @@ export function CardStack<T extends CardStackItem>({
       {/* Stage */}
       <div
         className="relative w-full flex justify-center"
-        style={{ height: Math.max(380, cardHeight + 80), touchAction: 'none' }}
+        style={{ height: Math.max(380, cardHeight + 80) }}
         tabIndex={0}
         onKeyDown={onKeyDown}
       >
@@ -247,6 +247,7 @@ export function CardStack<T extends CardStackItem>({
               const dragProps = isActive
                 ? {
                     drag: "x" as const,
+                    dragDirectionLock: true,
                     dragConstraints: { left: 0, right: 0 },
                     dragElastic: 0.18,
                     onDragEnd: (
@@ -256,11 +257,11 @@ export function CardStack<T extends CardStackItem>({
                       if (reduceMotion) return;
                       const travel = info.offset.x;
                       const v = info.velocity.x;
-                      const threshold = Math.min(160, cardWidth * 0.22);
+                      const threshold = Math.min(60, cardWidth * 0.15); // lowered threshold for easier mobile swipe
 
                       // swipe logic
-                      if (travel > threshold || v > 650) prev();
-                      else if (travel < -threshold || v < -650) next();
+                      if (travel > threshold || v > 400) prev();
+                      else if (travel < -threshold || v < -400) next();
                     },
                   }
                 : {};

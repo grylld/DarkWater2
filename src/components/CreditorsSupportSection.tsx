@@ -63,12 +63,12 @@ export function CreditorsSupportSection() {
 
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 scroll-pl-4 sm:scroll-pl-0"
+        className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 sm:pb-8 snap-x snap-mandatory hide-scrollbar"
         data-scroll-touch
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
       >
         {supportCards.map(({ icon: Icon, title, label, copy, footer, downloads }) => (
-          <div key={title} className="min-w-[calc(100vw-2rem)] sm:min-w-[300px] md:min-w-[400px] max-w-[500px] bg-dark-800 p-6 sm:p-8 md:p-10 rounded-[2rem] border border-white/5 shrink-0 snap-center">
+          <div key={title} className="w-[85vw] sm:w-auto sm:min-w-[300px] md:min-w-[400px] max-w-[500px] bg-dark-800 p-6 sm:p-8 md:p-10 rounded-[2rem] border border-white/5 shrink-0 snap-center">
             <div className="flex items-center justify-between gap-5 mb-8">
               <div className="flex items-center gap-4">
                 <div className="flex w-12 h-12 items-center justify-center rounded-xl bg-lime-500 text-dark-900">

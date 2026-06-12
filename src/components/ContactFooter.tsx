@@ -19,13 +19,8 @@ const companyLinks = [
 ];
 
 const hours = [
-  'Mon 09:00 - 17:00',
-  'Tue 09:00 - 17:00',
-  'Wed 09:00 - 17:00',
-  'Thu 09:00 - 17:00',
-  'Fri 09:00 - 17:00',
-  'Sat Closed',
-  'Sun Closed',
+  'Mon-Fri: 09:00 - 17:00',
+  'Sat-Sun: Closed',
 ];
 
 export function ContactFooter() {
