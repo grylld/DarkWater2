@@ -71,7 +71,7 @@ export function GuaranteeSection() {
 
   return (
     <section id="guarantee" className="scroll-mt-28 py-16 sm:py-24 w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-2 sm:mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold">
@@ -89,7 +89,7 @@ export function GuaranteeSection() {
         </div>
       </div>
 
-      <div className="w-full relative pt-2 pb-8 sm:py-12">
+      <div className="w-full relative pt-0 pb-8 sm:py-12 -mt-2 sm:mt-0">
         <CardStack
           items={guaranteeItems}
           initialIndex={0}
